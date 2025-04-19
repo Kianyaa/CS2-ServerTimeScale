@@ -23,12 +23,10 @@ public class ServerTimeScale : BasePlugin
     public override void Load(bool hotReload)
     {
         _timeScale = ConVar.Find("host_timescale");
-
-        Logger.LogInformation("ServerTimeScale are loaded");
     }
 
     [ConsoleCommand("css_timescale", "control host_timescale command in cs2 server")]
-    [RequiresPermissions("@css/admin")]
+    [RequiresPermissions("@css/generic")]
     [CommandHelper(minArgs: 1, usage: "expect value between 0 - 10", whoCanExecute: CommandUsage.CLIENT_AND_SERVER)]
     public void TimeScaleCommand(CCSPlayerController? player, CommandInfo commandInfo)
     {
@@ -188,7 +186,7 @@ public class ServerTimeScale : BasePlugin
 
     public override void Unload(bool hotReload)
     {
-        Logger.LogInformation("ServerTimeScale are unloaded");
+
     }
 }
 
